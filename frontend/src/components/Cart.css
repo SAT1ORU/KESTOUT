@@ -2,24 +2,24 @@
 
 .cart-container {
   max-width: 900px;
-  margin: 40px auto; /* Aumenta el margen superior e inferior */
-  padding: 30px; /* Aumenta el padding interno */
-  background-color: #ffffff; /* Fondo blanco para el contenedor principal */
-  border-radius: 15px; /* Bordes más redondeados */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada para un efecto flotante */
-  font-family: 'Roboto', sans-serif; /* Cambia a una fuente más moderna si está disponible */
-  color: #333; /* Color de texto general */
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  color: #333;
 }
 
 .cart-container h1 {
   text-align: center;
-  color: #2c3e50; /* Un azul oscuro más elegante */
-  margin-bottom: 40px; /* Más espacio debajo del título */
-  font-size: 3em; /* Título aún más grande */
+  color: #2c3e50;
+  margin-bottom: 40px;
+  font-size: 3em;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border-bottom: 2px solid #e0e0e0; /* Línea divisoria debajo del título */
+  border-bottom: 2px solid #e0e0e0;
   padding-bottom: 20px;
 }
 
@@ -30,26 +30,26 @@
 .cart-item {
   display: flex;
   align-items: center;
-  gap: 25px; /* Más espacio entre los elementos del ítem */
-  background-color: #fcfcfc; /* Un blanco muy ligero para cada ítem */
-  border: 1px solid #f0f0f0; /* Borde más sutil */
+  gap: 25px;
+  background-color: #fcfcfc;
+  border: 1px solid #f0f0f0;
   border-radius: 12px;
-  padding: 20px 25px; /* Más padding */
-  margin-bottom: 20px; /* Más espacio entre ítems */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra más definida */
-  transition: all 0.3s ease-in-out; /* Transición más suave */
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
 }
 
 .cart-item:hover {
-  transform: translateY(-5px) scale(1.01); /* Levantamiento y ligero aumento al pasar el mouse */
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12); /* Sombra más grande al hover */
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
 .cart-item-image {
-  width: 140px; /* Imagen más grande */
+  width: 140px;
   height: 140px;
   object-fit: contain;
-  border-radius: 10px; /* Bordes más redondeados para la imagen */
+  border-radius: 10px;
   border: 1px solid #e9ecef;
   padding: 8px;
   background-color: #ffffff;
@@ -61,96 +61,94 @@
 }
 
 .cart-item-details h4 {
-  font-size: 1.6em; /* Título de ítem aún más grande */
-  color: #34495e; /* Un tono de azul oscuro */
+  font-size: 1.6em;
+  color: #34495e;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .cart-item-details p {
-  font-size: 1.1em; /* Texto más legible */
+  font-size: 1.1em;
   color: #555;
   margin-bottom: 6px;
 }
 
 .cart-item-details p:last-of-type {
   font-weight: bold;
-  color: #007bff; /* Azul brillante para el total por ítem */
+  color: #007bff;
   font-size: 1.3em;
   margin-top: 10px;
 }
 
-/* Estilos para el botón de "Eliminar" en el carrito */
 .cart-item-details button {
-  background-color: #dc3545; /* Rojo vibrante */
+  background-color: #dc3545;
   color: white;
   border: none;
-  padding: 10px 22px; /* Más padding */
-  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px 22px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1.05em;
   font-weight: 600;
-  transition: all 0.3s ease; /* Transición para todos los cambios */
-  margin-top: 18px; /* Más espacio */
+  transition: all 0.3s ease;
+  margin-top: 18px;
   letter-spacing: 0.6px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra para el botón */
-  outline: none; /* Eliminar el contorno al enfocar */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
 
 .cart-item-details button:hover {
-  background-color: #c82333; /* Rojo más oscuro */
-  transform: translateY(-3px) scale(1.02); /* Efecto de levantamiento y ligero aumento */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hover */
+  background-color: #c82333;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .cart-summary {
-  background-color: #eaf3f7; /* Un azul claro muy sutil para el resumen */
+  background-color: #eaf3f7;
   border: 1px solid #dcdcdc;
   border-radius: 12px;
-  padding: 30px; /* Más padding */
+  padding: 30px;
   text-align: right;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   margin-top: 30px;
 }
 
 .cart-summary h3 {
-  font-size: 1.7em; /* Título más grande */
+  font-size: 1.7em;
   color: #34495e;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 .cart-summary h3:last-of-type {
-  font-size: 2.3em; /* Total a pagar muy grande y prominente */
-  color: #28a745; /* Verde para el total final */
-  font-weight: 800; /* Extra negrita */
+  font-size: 2.3em;
+  color: #28a745;
+  font-weight: 800;
   margin-top: 25px;
 }
 
-/* ESTILOS PARA EL BOTÓN "Vaciar Carrito" - ¡Aquí es donde lo arreglamos! */
+
 .cart-summary button {
-  background-color: #6c757d; /* Gris carbón */
+  background-color: #6c757d;
   color: white;
   border: none;
-  padding: 15px 30px; /* Aumenta el padding para un botón más grande */
-  border-radius: 10px; /* Bordes más redondeados */
+  padding: 15px 30px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 1.2em; /* Fuente más grande */
-  font-weight: 700; /* Negrita */
+  font-size: 1.2em;
+  font-weight: 700;
   transition: all 0.3s ease;
-  margin-top: 30px; /* Más espacio arriba */
+  margin-top: 30px;
   letter-spacing: 1px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
-  outline: none; /* Eliminar el contorno al enfocar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
 }
 
 .cart-summary button:hover {
-  background-color: #495057; /* Gris más oscuro al pasar el mouse */
-  transform: translateY(-4px) scale(1.03); /* Efecto de levantamiento más pronunciado */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hover */
+  background-color: #495057;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsividad mejorada para el carrito */
 @media (max-width: 768px) {
   .cart-container {
     padding: 15px;
@@ -173,10 +171,10 @@
   }
   .cart-item-details {
     text-align: center;
-    width: 100%; /* Ocupa todo el ancho */
+    width: 100%;
   }
   .cart-item-details button {
-    width: 80%; /* Botón de eliminar más ancho */
+    width: 80%;
     max-width: 250px;
   }
   .cart-summary {
@@ -189,7 +187,7 @@
     font-size: 1.8em;
   }
   .cart-summary button {
-    width: 90%; /* Botón de vaciar más ancho */
+    width: 90%;
     padding: 12px 20px;
     font-size: 1.05em;
   }

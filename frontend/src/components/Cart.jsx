@@ -1,7 +1,7 @@
 // frontend/src/components/Cart.jsx
 import React from 'react';
-import { useCart } from '../context/CartContext'; // Asegúrate de que la ruta sea correcta
-import './Cart.css'; // Asegúrate de que el path sea correcto
+import { useCart } from '../context/CartContext'; 
+import './Cart.css'; 
 
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart, getTotalItems, getTotalPrice } = useCart();
@@ -14,15 +14,15 @@ const Cart = () => {
       ) : (
         <div className="cart-items">
           {cartItems.map(item => {
-            // --- MODIFICACIÓN CLAVE AQUÍ ---
-            // Añadir una verificación de existencia para 'item' y 'item.price'
+            
+            
             if (!item || typeof item.price === 'undefined' || item.price === null || typeof item.quantity === 'undefined' || item.quantity === null) {
               console.warn("Cart item received an invalid item or missing price/quantity:", item);
-              return null; // No renderizar este ítem si es inválido
+              return null; 
             }
-            // --- FIN MODIFICACIÓN ---
+            
 
-            // Formatear el precio solo si existe y es un número
+           
             const formattedPrice = typeof item.price === 'number' ? item.price.toLocaleString('es-CO') : item.price;
             const itemTotalPrice = typeof item.price === 'number' && typeof item.quantity === 'number' ? (item.price * item.quantity).toLocaleString('es-CO') : 'N/A';
 

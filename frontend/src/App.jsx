@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
-import Footer from './components/Footer'; // <--- ASEGÚRATE DE QUE ESTA LÍNEA NO ESTÉ COMENTADA
+import Footer from './components/Footer'; 
 import { CartProvider } from './context/CartContext';
 
 import Contact from './components/Contact';
@@ -28,8 +28,8 @@ function App() {
               <Route path="/categorias" element={<Categories />} />
             </Routes>
           </main>
-          {/* DESCOMENTA LA LÍNEA DEL FOOTER ASÍ: */}
-          <Footer /> {/* Asegúrate de que Footer.jsx esté correctamente implementado */}
+          {}
+          <Footer /> {}
         </div>
       </CartProvider>
     </Router>

@@ -1,0 +1,128 @@
+/* frontend/src/components/Header.css */
+
+.main-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 2.2em; /* Esto aplicaba al texto, pero ahora es para el contenedor */
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  display: flex; /* Para alinear el logo si es imagen + texto */
+  align-items: center;
+  gap: 10px; /* Espacio entre el logo y el texto si lo hay */
+}
+
+/* NUEVOS ESTILOS PARA LA IMAGEN DEL LOGO */
+.logo-img {
+  height: 50px; /* Ajusta la altura del logo según tu imagen */
+  width: auto; /* Mantiene la proporción */
+  transition: transform 0.3s ease;
+}
+
+.site-logo:hover .logo-img {
+  transform: scale(1.05); /* Efecto al pasar el mouse sobre el logo */
+}
+
+/* Si decides mantener el texto "KestOUT" junto al logo, puedes estilizarlo: */
+.logo-text {
+  font-size: 2.2em; /* Mantener el tamaño del texto */
+  color: #ecf0f1; /* Color del texto */
+}
+
+.site-logo:hover .logo-text {
+  color: #3498db; /* Azul al pasar el mouse */
+}
+
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+.main-nav li a:hover {
+  color: #3498db;
+  border-bottom: 2px solid #3498db;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #28a745;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-link:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  color: white;
+  border-bottom: none;
+}
+
+/* Responsividad para el header */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-nav li a {
+    font-size: 1em;
+    padding: 5px 0;
+  }
+
+  .site-logo {
+    font-size: 1.8em; /* Ajuste para el texto si se usa */
+  }
+
+  .logo-img {
+    height: 40px; /* Ajusta la altura del logo para móviles */
+  }
+
+  .cart-link {
+    font-size: 0.9em;
+    padding: 6px 12px;
+  }
+}

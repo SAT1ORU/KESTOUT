@@ -1,0 +1,52 @@
+/* frontend/src/components/Footer.css */
+
+.main-footer {
+  background-color: #2c3e50; /* Color de fondo oscuro, igual que el header */
+  color: #ecf0f1; /* Color de texto claro */
+  padding: 20px 0; /* Reducimos el padding vertical, mantenemos horizontal 0 para que se extienda */
+  text-align: center;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2); /* Sombra hacia arriba */
+  width: 100%;
+  /* Eliminamos 'position: relative;' o 'absolute/fixed' aquí si vamos a usar flexbox en App.css */
+}
+
+.footer-content {
+  max-width: 1200px; /* Limita el ancho del contenido interno del footer */
+  margin: 0 auto; /* Centra el contenido */
+  padding: 0 20px; /* Padding horizontal para el contenido dentro del max-width */
+}
+
+.footer-content p {
+  margin-bottom: 10px; /* Espacio debajo del párrafo de copyright */
+  font-size: 0.95em;
+}
+
+.footer-links {
+  margin-top: 10px; /* Espacio encima de los enlaces */
+}
+
+.footer-links a {
+  color: #bdc3c7; /* Color de los enlaces, un gris claro */
+  text-decoration: none;
+  margin: 0 15px; /* Espacio entre los enlaces */
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #3498db; /* Azul al pasar el mouse */
+}
+
+/* Responsividad para el footer */
+@media (max-width: 768px) {
+  .main-footer {
+    padding: 15px 0;
+  }
+  .footer-content p {
+    font-size: 0.85em;
+  }
+  .footer-links a {
+    margin: 0 10px;
+    font-size: 0.8em;
+  }
+}

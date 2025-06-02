@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../App.css'; // Asegúrate de que los estilos globales se importen
-import './Categories.css'; // Importa los estilos específicos de Categorías
+import '../App.css'; 
+import './Categories.css'; 
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -13,7 +13,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/categorias'); // Asegúrate de que esta URL sea correcta
+        const response = await axios.get('http://localhost:3001/api/categorias');
         setCategories(response.data);
       } catch (err) {
         console.error("Error fetching categories:", err);
@@ -54,9 +54,9 @@ const Categories = () => {
       <div className="category-grid">
         {categories.map(category => (
           <Link to={`/productos?categoria=${category.name}`} key={category.id} className="category-card">
-            {/* --- CAMBIO CLAVE AQUÍ: CONSTRUIR LA RUTA COMPLETA DE LA IMAGEN --- */}
+            {}
             {category.image && <img src={`/img/${category.image}`} alt={category.name} className="category-image" />}
-            {/* --- FIN CAMBIO CLAVE --- */}
+            {}
             {!category.image && <div className="category-image-placeholder">{category.name}</div>}
             <h3>{category.name}</h3>
           </Link>

@@ -1,36 +1,27 @@
-// frontend/src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import Categories from './components/Categories';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
-import Footer from './components/Footer'; 
-import { CartProvider } from './context/CartContext';
-
 import Contact from './components/Contact';
-import Categories from './components/Categories';
-import Home from './components/Home';
-
-import './App.css';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <Router>
       <CartProvider>
-        <div className="App">
-          <Header />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/productos" element={<ProductList />} />
-              <Route path="/carrito" element={<Cart />} />
-              <Route path="/contactanos" element={<Contact />} />
-              <Route path="/categorias" element={<Categories />} />
-            </Routes>
-          </main>
-          {}
-          <Footer /> {}
-        </div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/categorias" element={<Categories />} />
+          <Route path="/productos" element={<ProductList />} />
+          <Route path="/carrito" element={<Cart />} />
+          <Route path="/contactanos" element={<Contact />} /> 
+        </Routes>
+        <Footer />
       </CartProvider>
     </Router>
   );

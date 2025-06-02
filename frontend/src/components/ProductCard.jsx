@@ -1,16 +1,16 @@
 // frontend/src/components/ProductCard.jsx
 import React from 'react';
-// Asegúrate de que importas useCart así:
-import { useCart } from '../context/CartContext'; // <--- VERIFICA ESTA LÍNEA
-import './ProductCard.css'; // Asumo que tienes un CSS para ProductCard, si no, es App.css
+
+import { useCart } from '../context/CartContext'; 
+import './ProductCard.css'; 
 
 const ProductCard = ({ product }) => {
-  const { addToCart } = useCart(); // Usa el hook aquí
+  const { addToCart } = useCart(); 
 
-  const formattedPrice = new Intl.NumberFormat('es-CO', { // 'es-CO' para formato colombiano
+  const formattedPrice = new Intl.NumberFormat('es-CO', { 
     style: 'currency',
-    currency: 'COP', // Peso Colombiano
-    minimumFractionDigits: 0, // Sin decimales para miles
+    currency: 'COP', 
+    minimumFractionDigits: 0, 
     maximumFractionDigits: 0,
   }).format(product.price);
 

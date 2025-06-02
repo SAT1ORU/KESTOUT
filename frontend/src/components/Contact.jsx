@@ -1,6 +1,6 @@
 // frontend/src/components/Contact.jsx
 import React, { useState } from 'react';
-import './Contact.css'; // Vamos a crear este archivo CSS
+import './Contact.css'; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,8 +19,8 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes añadir la lógica para enviar el formulario,
-    // por ejemplo, a una API del backend o a un servicio de email.
+    
+    
     console.log('Formulario enviado:', formData);
     alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
     setFormData({ name: '', email: '', message: '' }); // Limpiar formulario

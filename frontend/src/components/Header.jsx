@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import './Header.css';
-// --- IMPORTA EL LOGO DESDE LA CARPETA ASSETS ---
-import KestOUTLogo from '../assets/kestout_logo.png'; // <--- RUTA CORRECTA PARA EL LOGO
+// --- INICIO IMPORTACIÓN DEL LOGO ---
+import KestOUTLogo from '../assets/kestout_logo.png'; 
 // --- FIN IMPORTACIÓN DEL LOGO ---
 
 const Header = () => {
@@ -19,8 +19,6 @@ const Header = () => {
         <Link to="/" className="site-logo">
           {/* USAR EL LOGO IMPORTADO */}
           <img src={KestOUTLogo} alt="KestOUT Logo" className="logo-img" />
-          {/* Si quieres que el texto "KestOUT" siga apareciendo junto al logo, puedes ponerlo aquí: */}
-          {/* <span className="logo-text">KestOUT</span> */}
         </Link>
         <nav className="main-nav">
           <ul>

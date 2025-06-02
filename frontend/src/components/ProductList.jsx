@@ -1,70 +1,60 @@
-// frontend/src/components/ProductList.jsx
+// frontend/src/components/ProductList.jsx (o similar)
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ProductCard from './ProductCard';
-import '../App.css';
+import { useLocation } from 'react-router-dom'; 
+import ProductCard from './ProductCard'; 
+import './ProductList.css'; 
 
-function ProductList() {
+const ProductList = () => {
   const [products, setProducts] = useState([]);
-  const [sortOption, setSortOption] = useState('');
-  const [originalProducts, setOriginalProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const location = useLocation(); 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/productos')
-      .then(response => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        // Obtener el parámetro 'categoria' de la URL
+        const params = new URLSearchParams(location.search);
+        const categoryFilter = params.get('categoria');
+
+        // Construir la URL de la API dinámicamente
+        let apiUrl = 'http://localhost:3001/api/productos';
+        if (categoryFilter) {
+          apiUrl += `?categoria=${encodeURIComponent(categoryFilter)}`;
+        }
+
+        const response = await axios.get(apiUrl);
         setProducts(response.data);
-        setOriginalProducts(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching products:', error);
-      });
-  }, []);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+        setError("No se pudieron cargar los productos. Intenta de nuevo más tarde.");
+        setProducts([]); 
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const handleSortChange = (event) => {
-    const selectedOption = event.target.value;
-    setSortOption(selectedOption);
+    fetchProducts();
+  }, [location.search]);
 
-    let sorted = [...products];
+  if (loading) {
+    return <div className="product-list-container"><p>Cargando productos...</p></div>;
+  }
 
-    if (selectedOption === 'price-asc') {
-      sorted.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-    } else if (selectedOption === 'price-desc') {
-      sorted.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-    } else if (selectedOption === 'brand-asc') {
-      sorted.sort((a, b) => {
-        // Asegúrate de que los productos tengan una propiedad 'brand'
-        // Si 'brand' es undefined, trátalo como una cadena vacía para la comparación
-        const brandA = a.brand ? a.brand.toLowerCase() : '';
-        const brandB = b.brand ? b.brand.toLowerCase() : '';
-        return brandA.localeCompare(brandB);
-      });
-    } else if (selectedOption === 'brand-desc') {
-      sorted.sort((a, b) => {
-        const brandA = a.brand ? a.brand.toLowerCase() : '';
-        const brandB = b.brand ? b.brand.toLowerCase() : '';
-        return brandB.localeCompare(brandA);
-      });
-    } else {
-      sorted = [...originalProducts];
-    }
-    setProducts(sorted);
-  };
+  if (error) {
+    return <div className="product-list-container"><p className="error-message">{error}</p></div>;
+  }
+
+  if (products.length === 0) {
+    return <div className="product-list-container"><p>No se encontraron productos para esta categoría.</p></div>;
+  }
 
   return (
     <div className="product-list-container">
-      <div className="product-list-header">
-        <h1>Productos disponibles:</h1>
-        <div className="sort-controls">
-          <label htmlFor="sort-select">Ordenar por:</label>
-          <select id="sort-select" value={sortOption} onChange={handleSortChange}>
-            <option value="">Predeterminado</option>
-            <option value="price-asc">Precio (Menor a Mayor)</option>
-            <option value="price-desc">Precio (Mayor a Menor)</option>
-            <option value="brand-asc">Marca (A-Z)</option>
-            <option value="brand-desc">Marca (Z-A)</option>
-          </select>
-        </div>
-      </div>
+      <h1>{location.search ? `Productos de ${new URLSearchParams(location.search).get('categoria')}` : 'Todos nuestros productos'}</h1>
       <div className="product-grid">
         {products.map(product => (
           <ProductCard key={product.id} product={product} />
@@ -72,6 +62,6 @@ function ProductList() {
       </div>
     </div>
   );
-}
+};
 
 export default ProductList;
